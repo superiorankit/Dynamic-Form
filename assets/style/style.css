@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for .main */
+.main {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 10%;
+    background-color: #ecaf40;
+  }
+  
+  /* Styles for .innerMain */
+  .innerMain {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Styles for .imgBox */
+  .imgBox {
+    background-image: url('../images/train.avif');
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 170px;
+
+  }
+  
+  /* Styles for .trainName */
+  .trainName {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, 20px);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Styles for h1 inside .trainName */
+  .trainName>h1 {
+    padding: 10px;
+    font-size: 1.3em;
+    background-color: #3f5390;
+    color: white;
+  }
+  
+  /* Styles for .timeBox */
+  .timeBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+  
+  
+  /* Styles for .stationBox */
+  .stationBox {
+    /* Add your styles here */
+  }
+  
+  /* Styles for h1 inside .stationBox */
+  .stationBox>h1 {
+    font-size: 1.2em;
+  }
+
+  .stationBox>h1>span{
+    margin-left: 5px;
+    padding-left: 5px;
+    border-left: 1.5px solid black;
+  }
+
+  .stationBox>span{
+    margin-left: 5px;
+    border-left: 1.5px solid black;
+    padding-left: 5px;
+  }
+
+  .stationBox>p{
+    text-align: center;
+    margin: 3px 0;
+    letter-spacing: 1px;
+  }
+  
+  /* Styles for .time */
+  .time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .time>span{
+    display: inline-block;
+    width: 15px;
+    height: 1.4px;
+    background-color: black;
+    margin: 0 6px;
+  }
+  
+  /* Styles for .coach */
+  .coach {
+    /* Add your styles here */
+  }
+  
+  /* Styles for .formBox */
+  .formBox {
+    /* Add your styles here */
+  }
+  
+  /* Styles for .detailsBox */
+  .detailsBox {
+    /* Add your styles here */
+  }
+  
+  /* Styles for .priceBox */
+  .priceBox {
+    /* Add your styles here */
+  }
+  
