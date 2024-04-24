@@ -288,7 +288,7 @@ const book = () => {
     obj.tax = tax;
     obj.total = total
 
-    localStorage.setItem('data',JSON.stringify(obj));
+    localStorage.setItem('ticket',JSON.stringify(obj));
 
 
     let loader = document.getElementById('loader');
