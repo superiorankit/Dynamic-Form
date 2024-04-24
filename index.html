@@ -1,52 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/irctcLogo.webp">
+    <title>Ticket Booking</title>
 
-    <link rel="stylesheet" href="./assets/style/style.css"/>
-</head>
+    <link rel="stylesheet" href="./assets/style/style.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="loaderBox" id="loader">
+      <img src="./assets/images/trainLoader.gif" alt="loading......"/>
+    </div>
     <div class="main">
-        <div class="innerMain">
-            <div class="imgBox">
-                <div class="trainName">
-                    <h1>DDN SHTBDI EXP (12018)</h1>
-                    <div class="timeBox">
-                        <div class="stationBox">
-                            <h1>16:55<span>DEHRADUN</span></h1>
-                            <p>THU, 25 Apr</p>
-                        </div>
-                        <div class="time">
-                            <span></span>
-                            05:55
-                            <span></span>
-                        </div>
-                        <div class="stationBox">
-                            <h1>22:50<span>NEW DELHI</span></h1>
-                            <p>THU, 25 Apr</p>
-                        </div>
-                    </div>
-                    <div class="coach">
-                        AC Chair car (CC) <span>General</span>
-                    </div>
-                </div>
+      <div class="innerMain">
+        <div class="imgBox">
+          <div class="trainName">
+            <h1>DDN SHTBDI EXP (12018)</h1>
+            <div class="timeBox">
+              <div class="stationBox">
+                <h1>16:55<span>DEHRADUN</span></h1>
+                <p>THU, 25 Apr</p>
+              </div>
+              <div class="time">
+                <span></span>
+                05:55
+                <span></span>
+              </div>
+              <div class="stationBox">
+                <h1>22:50<span>NEW DELHI</span></h1>
+                <p>THU, 25 Apr</p>
+              </div>
             </div>
-
-            <div class="formBox">
-                <div class="detailsBox">
-
-                </div>
-
-                <div class="priceBox"></div>
-            </div>
-
-
+            <div class="coach">AC Chair car (CC) <span>General</span></div>
+          </div>
         </div>
-    </div>  
-    
 
-</body>
+        <div class="formBox">
+          <div class="detailsBox">
+            <form id="form">
+            <div class="infoBox passengerBox" id="passengerBox" style="position: relative;">
+              <div class="infoHead">
+                <h1>Add Passenger</h1>
+
+              </div>
+
+              <div class="passDetailBox" id="passenger1">
+                <div class="btnGrp">
+                  <img class="add" src="./assets/images/plus.png" onclick="addPass('passenger1')"/>
+                </div>
+                <div class="passBorder" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                  <h3>Passenger 1</h3>
+                  <img class="delete" src="./assets/images/cross.png" onclick="delPass('passenger1')" />
+                </div>
+
+                <div class="passDetail">
+                  <div class="input">
+                    <label for="name1">Passenger name*</label>
+                  <input type="text" class="name" id="name1" oninput="handleKey(event,'name')"/>
+                  <p class="error"></p>
+                </div>
+                <div class="input">
+                  <label for="name1">Age*</label>
+                  <input type="text" class="age" id="age1" onkeypress="handleLength(event,'age')" oninput="handleKey(event,'number')" />
+                  <p class="error"></p> 
+                </div> 
+                <div class="input">
+                  <select name="gender1" id="gender1" class="gender">
+                    <option value="select" selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value=female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <p class="error"></p>
+                  </div>
+                  
+                </div>
+
+                <div class="passBorder" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;"></div>
+              </div>
+
+              <div class="error" id="addDelError" style="top:40px; font-size: 0.7em"></div>
+              
+            </div>
+
+            <div class="infoBox contactBox">
+              <div class="infoHead">
+                <h1>Contact Details</h1>
+              </div>
+              <p>
+                (Ticket details will be sent to email- ak******@gmail.com and
+                registered mobile number 70******10)
+              </p>
+              <div style="position: relative; width: fit-content;">
+              <label for="phone">Phone*:</label>
+              <input type="tel" id="phone" placeholder="Enter Phone Number" onkeypress="handleLength(event,'phone')" oninput="handleKey(event,'number')" />
+              <p class="error"></p>
+            </div>
+            </div>
+
+            <div class="infoBox otherPref">
+              <div class="infoHead">
+                <h1>Other Preferences</h1>
+              </div>
+
+              <div class="prefDetail">
+                <div><input type="checkbox" id="autoUpgrade"/> <label for="autoUpgrade">Consider for Auto Upgradation.</label></div>
+                <div><input type="checkbox" id="confirmBerth"/> <label for="confirmBerth">Book Only if confirm berths are alloted.</label></div>
+              </div>
+              <select class="reservation" name="reservation" id="reservation">
+                <option value="choice">Reservation Choice</option>
+                <option value="lower1">Book, only if at least 1 lower berth is allotted.</option>
+                <option value="lower2">Book, only if at least 2 lower berth is allotted.</option>
+                <option value="same">Book, only if all berths are alloted in same coach.</option>
+              </select>
+            </div>
+          </form>
+          </div>
+
+          <div class="priceBox">
+            <h1>Fare Summary</h1>
+            <div class="priceDetail fare">
+                <p>Ticket Fare</p>
+                <h4 id="fare">&#8377;535.00</h4>
+            </div>
+            <div class="priceDetail tax">
+                <p>Convenience Fee (Incl. of GST)</p>
+                <h4 id="tax">&#8377;35.40</h4>
+            </div>
+
+            <div class="totalDiv">
+                <h4>Total Fare</h4>
+                <h4 id="total">&#8377;570.40</h4>
+            </div>
+
+            <div class="pay" onclick="book()">Book Now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="./assets/script/script.js"></script>
+  </body>
 </html>

@@ -5,25 +5,59 @@
     font-family: "Roboto", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #7792c5; 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: #3f5390;
+}
+
+
 /* Styles for .main */
 .main {
     width: 100%;
     height: 100vh;
-    padding: 50px 10%;
+    background-image: url('../images/tejas.jpeg');
+    background-position: center;
+    background-size: cover;
+    /* padding: 50px 10%; */
     background-color: #ecaf40;
+    position: relative;
+  }
+
+  .main::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    background-color: rgba(137, 137, 137, 0.644);
   }
   
   /* Styles for .innerMain */
   .innerMain {
     width: 100%;
     height: 100%;
+    /* border-radius: 20px; */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 0px 10px -2px black;
   }
   
   /* Styles for .imgBox */
   .imgBox {
     background-image: url('../images/train.avif');
     background-position: center;
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     height: 170px;
@@ -40,6 +74,7 @@
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0px 1px 9px -6px black;
   }
   
   /* Styles for h1 inside .trainName */
@@ -59,10 +94,6 @@
 }
   
   
-  /* Styles for .stationBox */
-  .stationBox {
-    /* Add your styles here */
-  }
   
   /* Styles for h1 inside .stationBox */
   .stationBox>h1 {
@@ -124,16 +155,259 @@
   
   /* Styles for .formBox */
   .formBox {
-    /* Add your styles here */
+    width: 100%;
+    height: calc(100% - 170px);
+    background-color: white;
+    padding-top: 100px;
+    display: flex;
   }
   
-  /* Styles for .detailsBox */
-  .detailsBox {
-    /* Add your styles here */
+
+/* Styles for .detailsBox */
+.detailsBox {
+  width: 60%;
+  padding: 0 50px;
+  border-right: 2px solid #00000042;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Styles for .infoBox */
+.infoBox {
+  margin-bottom: 40px;
+}
+
+/* Styles for .infoHead */
+.infoHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8em;
+  border-bottom: 1px solid #b1b1b1;
+  padding: 5px;
+}
+
+/* Styles for h1 inside .infoHead */
+.infoHead h1 {
+  color: #3f5390;
+}
+
+
+/* Styles for .passDetailBox */
+.passDetailBox {
+  margin: 20px 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Styles for .passBorder */
+.passBorder {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  color: white;
+  background-color: #3f5390;
+  padding: 5px;
+  height: 31px;
+  font-size: 0.9em;
+}
+
+.btnGrp{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  margin-left: 5px;
+}
+
+
+
+.add{
+  width: 20px;
+  padding: 4px;
+  border-radius: 100%;
+  background-color: #3f5390;
+}
+
+.add:hover{
+  cursor: pointer;
+  background-color: #283764;
+}
+
+.add:active{
+  transform: scale(0.8);
+}
+
+.delete{
+  border-radius: 100%;
+  width: 15px;
+  padding: 3px;
+  background-color: #98b2ff;
+}
+
+.delete:hover{
+  cursor: pointer;
+}
+
+.delete:active{
+  transform: scale(0.9);
+}
+
+/* Styles for .passDetail */
+.passDetail {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label{
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+@keyframes vibrate{
+  from{
+      left:-2px;
   }
-  
-  /* Styles for .priceBox */
-  .priceBox {
-    /* Add your styles here */
+  to{
+      left:2px;
   }
+}
+
+.input{
+  position: relative;
+}
+
+.input label{
+  position: absolute;
+  top: 0;
+  left: 7px;
+  transform: translatey(-50%);
+  z-index: 1;
+  font-size: 0.58em;
+  color: #1d2848;
+  font-weight: 500;
+  -webkit-text-stroke: 0.2px;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding: 0 2px;
+  background-color: white;
+}
+
+input, select{
+  padding: 5px 10px;
+  border: 1px solid #3f5390;
+  outline: none;
+  border-radius: 5px;
+  position: relative;
+}
+
+.error{
+  position: absolute;
+  font-size: 0.6em;
+  top: 100%;
+  right: 5px;
+  color: red;
+}
+
+.contactBox>p{
+  font-size: 0.8em;
+  margin: 20px 10px;
+  font-weight: bold;
+}
+
+.prefDetail{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+}
+
+.prefDetail div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prefDetail input, .prefDetail label{
+  cursor: pointer;
+}
+
+.reservation{
+  margin-left: 10px;
+}
+
+/* Styles for .priceBox */
+.priceBox {
+  padding-left: 30px;
+  padding-right: 50px;
+  width: 40%;
+}
+
+/* Styles for h1 inside .priceBox */
+.priceBox h1 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #3f5390;
+  border-bottom: 1px solid #b1b1b1;
+  padding: 5px;
+}
+
+.priceDetail{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: #3f5390;
+  padding: 10px 5px;
+  margin: 10px 0;
+}
+
+
+.pay{
+  margin-left: auto;
+  width: fit-content;
+  background-color: #3f5390;
+  color: white;
+  padding: 5px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.pay:hover{
+  cursor: pointer;
+  background-color: #1a2956;
+}
+
+.pay:active{
+  transform: scale(0.8);
+}
+
+.loaderBox{
+position: absolute;
+width: 100%;
+height: 100%;
+place-content: center;
+background-color: #121c30b6;
+z-index: 100;
+display: none;
+}
+
+.loaderBox img{
+  width: 200px;
+}
+
+
+
   
