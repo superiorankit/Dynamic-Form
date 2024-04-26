@@ -17,7 +17,7 @@ let passLength = 1;;
 let passengerBox = document.getElementById("passengerBox");
 
 const addPass = (id) => {
-  let addError = document.getElementById('addDelError');
+  let addError = document.querySelector(`#${id}>.error`);
   if (passList.length !== 0) {
     addError.innerHTML = ""
     passLength++;
@@ -29,7 +29,7 @@ const addPass = (id) => {
     passDetailBox.setAttribute("class", "passDetailBox");
     passDetailBox.id = `passenger${passNum}`;
 
-    passDetailBox.innerHTML = `<div class="btnGrp">
+    passDetailBox.innerHTML = `<p class="error"></p><div class="btnGrp">
     <img class="add" src="./assets/images/plus.png" onclick="addPass('passenger${passNum}')"/>
   </div><div class="passBorder" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
       <h3>Passenger ${passLength}</h3>
@@ -89,7 +89,7 @@ const addPass = (id) => {
 };
 
 const delPass = (id) => {
-  let delError = document.getElementById('addDelError');
+  let delError = document.querySelector(`#${id}>.error`);
   if (passList.length !== 5) {
 
     delError.innerHTML = ""
@@ -178,7 +178,9 @@ const handleLength = (e, field) => {
 
 const book = () => {
 
-  let obj={};
+  let obj={
+    passengerDetails:{}
+  };
 
   let isValid = true;
 
@@ -193,7 +195,7 @@ const book = () => {
 
   for (let i = 0; i < name.length; i++) {
 
-    obj[`passenger${i+1}`]={};
+    obj.passengerDetails[`passenger${i+1}`]={};
 
     if(name[i].value.trim().length === 0 || !(regexObj.name.test(name[i].value.trim())))
     {
@@ -209,7 +211,7 @@ const book = () => {
       }
     }
     else{
-      obj[`passenger${i+1}`].name = name[i].value.trim();
+      obj.passengerDetails[`passenger${i+1}`].name = name[i].value.trim();
     }
   }
 
@@ -237,7 +239,7 @@ const book = () => {
       }
     }
     else{
-      obj[`passenger${i+1}`].age = age[i].value.trim();
+      obj.passengerDetails[`passenger${i+1}`].age = age[i].value.trim();
     }
   }
 
@@ -257,7 +259,7 @@ const book = () => {
       gender[i].addEventListener("animationend", (e) => e.target.style.animation = '');
     }
     else{
-      obj[`passenger${i+1}`].gender = gender[i].value.trim();
+      obj.passengerDetails[`passenger${i+1}`].gender = gender[i].value.trim();
     }
   }
 
@@ -284,10 +286,15 @@ const book = () => {
 
   if(isValid)
   {
+
+    let date = new Date();
+
     obj.ticketPrice = tPrice;
     obj.tax = tax;
     obj.total = total
-
+    obj.pnr = (Math.random()*10000000000).toFixed();
+    obj.date = `${date.getDate()} ${date.getMonth()} ${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+    alert(obj.date)
     localStorage.setItem('ticket',JSON.stringify(obj));
 
 
@@ -300,6 +307,7 @@ const book = () => {
     setTimeout(()=>{
       loader.style.display = "none";
       form.reset();
+      location.href='./ticket.html'
     },3000)
 
 

@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+
+/* Class styles */
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8% 10%;
+
+}
+
+
+.ticketBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-shadow: 0px 0px 12px -6px black;
+    /* padding: 20px; */
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #fdffdb;
+    background-image: url('../images/IRlogoSmall.png'); 
+}
+
+.ticketLeft {
+    background-image: url('../images/trainTicket.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 27%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.ticketLeft::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000069;
+    backdrop-filter: blur(1px);
+
+}
+
+.happyTxt{
+    position: relative;
+    color: wheat;
+    text-align: center;
+}
+
+
+.ticketRight {
+    width: 73%;
+    display: flex;
+}
+
+
+.logo{
+    position: relative;
+}
+
+.logo img{
+    width: 100px;
+}
+
+
+.passDetailBox {
+    width: 60%;
+    border-right: 3px double black;
+    padding: 20px;
+    position: relative;
+}
+
+.stationBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.pnrDiv {
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.pnrDiv h3{
+    color: #8ab6ff;
+    font-size: 0.6em;
+}
+
+.pnrDiv p{
+    letter-spacing: 1.5px;
+    font-size: 0.6em;
+    font-weight: bold;
+    color: #000000;
+}
+
+.from, .to {
+    text-align: center;
+}
+
+.head {
+    font-size: 0.7em;
+    -webkit-text-stroke: 0.1px;
+    color: #8d8d8d;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    text-align: center; 
+}
+
+.classType{
+    margin-top: 40px;
+}
+
+.passDetail{
+    margin-top: 40px;
+    text-transform: capitalize;
+}
+
+.priceDetail{
+    width: 60%;
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+}
+
+.trainDetailBox{
+    width: 40%;
+    padding: 20px;
+    position: relative;
+}
+
+.train{
+    margin-top: 30px;
+}
+
+.trainDetailBox table h6{
+margin-top: 3px;
+font-size: 1em;
+}
+
+.dateJourn{
+    margin-top: 40px;
+}
+
+.bookDate{
+    width: fit-content;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.bookDate h6{
+    font-size: 0.8em;
+
+}
+
+.scanner{
+position: absolute;
+width: 100px;
+right: 20px;
+bottom: 20px;
+}

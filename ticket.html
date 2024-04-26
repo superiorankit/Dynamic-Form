@@ -1,28 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/irctcLogo.webp">
+    <title>Ticket</title>
+
+    <link rel="stylesheet" href="./assets/style/ticket.css" />
+
+
 </head>
+
 <body>
     <div class="main">
         <div class="ticketBox">
             <div class="ticketLeft">
-                <div class="scanner">
-                    <img src="" alt="scanner"/>
+                <div class="logo">
+                    <img src="./assets/images/IRlogo.png" alt="scanner" />
                 </div>
 
-                <div class="pnrDiv">
-                    <h3>PNR</h3>
-                    <p>93758383</p>
-                </div>
+                    <h1 class="happyTxt">HAPPY JOURNEY</h1>
             </div>
 
             <div class="ticketRight">
-                
+                <div class="passDetailBox">
+                    <div class="stationBox">
+                        <div class="from">
+                            <p class="head">From</p>
+                            <h1>DDN</h1>
+                            <h6>Dehradun</h6>
+                        </div>
+
+
+                        <div class="pnrDiv">
+                            <h3>PNR</h3>
+                            <p id="pnr">93758383</p>
+                        </div>
+
+
+                        <div class="to">
+                            <p class="head">To</p>
+                            <h1>NDLS</h1>
+                            <h6>New Delhi</h6>
+                        </div>
+                    </div>
+
+                    <table class="classType">
+                        <tr>
+                            <th>
+                                <p class="head">Class</p>
+                            </th>
+                            <th>
+                                <p class="head">Adult</p>
+                            </th>
+                            <th>
+                                <p class="head">Child</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>AC Chair car (CC) General</h6>
+                            </td>
+                            <td>
+                                <h6 id="adult">4</h6>
+                            </td>
+                            <td>
+                                <h6 id="child">0</h6>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table class="passDetail" id="passengerBox">
+                        <tr>
+                            <th>
+                                <p class="head">NAME</p>
+                            </th>
+                            <th>
+                                <p class="head">AGE/SEX</p>
+                            </th>
+                            <th>
+                                <p class="head">COACH</p>
+                            </th>
+                            <th>
+                                <p class="head">SEAT/BERTH</p>
+                            </th>
+                        </tr>
+
+                    </table>
+
+                    <table class="priceDetail">
+                        <tr>
+                            <th>
+                                <p class="head">Ticket Price</p>
+                            </th>
+                            <th>
+                                <p class="head">Tax</p>
+                            </th>
+                            <th>
+                                <p class="head">Total</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 id="ticket">535.00</h6>
+                            </td>
+                            <td>
+                                <h6 id="tax">30.00</h6>
+                            </td>
+                            <td>
+                                <h6 id="total">565.00</h6>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </div>
+
+                <div class="trainDetailBox">
+
+                    <div class="stationBox ArrDepBox">
+                        <div class="from">
+                            <p class="head">Departure</p>
+                            <h1>16:55</h1>
+                            <h6>04 MAR 2024</h6>
+                        </div>
+
+                        <div class="to">
+                            <p class="head">Arrival</p>
+                            <h1>20:50</h1>
+                            <h6>04 MAR 2024</h6>
+                        </div>
+                    </div>
+
+                    <table class="dateJourn">
+                        <tr>
+                            <th>
+                                <p class="head">DATE OF JOURNEY</p>
+                            </th>
+                            <th>
+                                <p class="head">K.M.</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>04 MAR 2024</h6>
+                            </td>
+                            <td>
+                                <h6>315</h6>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="train">
+                        <tr>
+                            <th>
+                                <p class="head">TRAIN</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>12018 DDN SHTBDI EXP</h6>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table class="bookDate">
+                        <tr>
+                            <th>
+                                <p class="head">DATE OF BOOKING</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 id="book" style="font-size: 0.8em;">26 APR 2024 01:11</h6>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <img class="scanner" src="./assets/images/scanner.png" alt="scanner" />
+
+
+
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="./assets/script/ticket.js"></script>
+
 </body>
+
 </html>
