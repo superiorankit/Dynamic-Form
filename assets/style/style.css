@@ -408,6 +408,28 @@ display: none;
   width: 200px;
 }
 
+.mssgBox{
+  display: none;
+}
+
+.mssg{
+  background-color: white;
+  padding: 30px 50px;
+  font-weight: bold;
+  color: red;
+  border: 5px solid #232c46;
+  border-radius: 20px;
+  position: relative;
+}
+
+.mssgCross{
+  position: absolute;
+  width: 16px !important;
+  top: -4px;
+  right: -22px;
+  background-color: white;
+}
+
 
 
   
