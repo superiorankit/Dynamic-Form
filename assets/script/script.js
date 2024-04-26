@@ -19,6 +19,25 @@ const addPass = (id) => {
   let addError = document.querySelector(`#${id}>.error`);
   if (passLength < 5) {
     addError.innerHTML = ""
+
+    let input = document.querySelectorAll(`#${id} input`);
+    let select = document.querySelector(`#${id} select`);
+
+    if(select.value ===  "select")
+    {
+      addError.innerHTML = "Fill all Details*";
+      return;
+    }
+
+    for(let i=0;i<input.length;i++)
+    {
+      if(!input[i].value){
+        addError.innerHTML = "Fill all Details*";
+        return;
+      }
+    }
+
+
     passLength++;
 
     let currNum = Number(id.at(-1));
